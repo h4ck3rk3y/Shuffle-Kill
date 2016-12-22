@@ -1,5 +1,7 @@
-chrome.webNavigation.onHistoryStateUpdated.addListener(function(details) {
-    chrome.tabs.executeScript(null,{file:"js/content.js"});
+chrome.runtime.onMessage.addListener(function(message,sender,sendResponse){
+	if(message.message == 'killme') {
+		chrome.tabs.remove(sender.tab.id);
+	}
 });
 
 chrome.tabs.query({},function(tabs){

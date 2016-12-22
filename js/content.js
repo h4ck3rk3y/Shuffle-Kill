@@ -4,10 +4,10 @@ window.MutationObserver = window.MutationObserver;
 
 var target = document.querySelector('.ytp-play-button');
 
-observer = new MutationObserver(function(mutation, chrome){
+observer = new MutationObserver(function(mutation){
 	if($('.ytp-play-button').attr('aria-label') == undefined && $('.ytp-play-button').attr('title') == 'Replay')
 	{
-		alert('killing tab');
+		chrome.runtime.sendMessage({message: 'killme'}, null);
 	}
 });
 
