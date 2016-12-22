@@ -17,5 +17,13 @@ config = {
 
 observer.observe(target, config);
 
+chrome.runtime.onMessage.addListener(function(message,sender,sendResponse){
+	console.log('asked to play music');
+	if(message.message == 'play-music')
+	{
+		$('.ytp-play-button').trigger('click');
+	}
+});
+
 
 //<button class="ytp-play-button ytp-button" aria-label="Pause">
