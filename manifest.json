@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+
+  "name": "Shuffle & Kill",
+  "description": "Shuffle and Kill tabs on YouTube!",
+  "version": "0.01",
+
+  "page_action": {
+    "default_icon": "icon.png"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ],
+  "content_scripts": [{
+  	"matches": ["https://www.youtube.com/watch*", "https://youtube.com/watch*"],
+  	"js" : ["lib/jquery.min.js","js/content.js"]
+  }],
+  "background" : {
+  	"scripts": ["js/background.js"]
+  },
+  "icons": {
+    "128": "icon.png"
+  }
+}
