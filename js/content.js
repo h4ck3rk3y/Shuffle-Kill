@@ -1,5 +1,3 @@
-console.log("content.js loaded");
-
 var target = document.querySelector('.ytp-play-button');
 
 observer = new MutationObserver(function(mutation){
